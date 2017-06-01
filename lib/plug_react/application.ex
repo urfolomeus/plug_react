@@ -12,6 +12,7 @@ defmodule PlugReact.Application do
     children = [
       # Starts a worker by calling: PlugReact.Worker.start_link(arg1, arg2, arg3)
       # worker(PlugReact.Worker, [arg1, arg2, arg3]),
+      Plug.Adapters.Cowboy.child_spec(:http, PlugReact.Router, [], [port: 4001])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
