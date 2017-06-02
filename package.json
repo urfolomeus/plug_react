@@ -1,0 +1,14 @@
+{
+  "name": "plug_react",
+  "version": "1.0.0",
+  "description": "A simple react app served over Elixir Plug.",
+  "main": "index.js",
+  "author": "Alan Gardner <urfolomeus@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --watch-stdin --progress --color"
+  },
+  "devDependencies": {
+    "webpack": "^2.6.1"
+  }
+}

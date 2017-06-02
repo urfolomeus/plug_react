@@ -18,3 +18,10 @@ erl_crash.dump
 
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
+
+# Ignore node modules and artifacts
+/node_modules
+npm-debug.log
+
+# Seeing as we build priv/static, we don't need to commit it to version control
+/priv/static
