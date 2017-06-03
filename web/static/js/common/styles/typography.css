@@ -1,0 +1,21 @@
+/* Internal use only */
+
+._standard-font-size {
+  font-size: 1rem;
+}
+
+._standard-font {
+  composes: _standard-font-size;
+
+  font-family: Georgia, serif;
+}
+
+
+/* Shared */
+
+.h1 {
+  composes: _standard-font;
+
+  padding: 0;
+  margin: 0;
+}

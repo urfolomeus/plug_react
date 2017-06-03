@@ -1,0 +1,8 @@
+/**
+  Used to set the base rem size for components in the application.
+  Components are then expected to specify their dimensions in relation
+  to this base size using ems.
+*/
+.baseSize {
+  composes: _standard-font-size from './typography.css';
+}

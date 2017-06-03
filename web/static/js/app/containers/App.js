@@ -1,8 +1,10 @@
 import React from 'react'
 
-import Cthulhu from '../components/Cthulhu'
+import Header from '../../common/components/Header'
+
+import '../../common/styles/global.css'
 
 const App =
-  <Cthulhu />
+  <Header />
 
 export default App

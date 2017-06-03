@@ -1,0 +1,29 @@
+@value colors: '../styles/colors.css';
+@value (
+  color-background-primary,
+  color-text-white
+) from colors;
+
+.header {
+  composes: baseSize from '../styles/common.css';
+
+  background-color: color-background-primary;
+  padding: 1em;
+}
+
+.headerWrapper {
+  margin: auto;
+  width: 26.4em;
+}
+
+.icon {
+  width: 3.125em;
+}
+
+.headerText {
+  composes: h1 from '../styles/common.css';
+
+  color: color-text-white;
+  display: inline;
+  font-size: 4.2em;
+}

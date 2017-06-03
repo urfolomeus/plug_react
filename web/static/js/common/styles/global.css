@@ -1,0 +1,11 @@
+html :global { box-sizing: border-box; }
+* :global,
+*:before :global,
+*:after :global {
+  box-sizing: inherit;
+}
+
+body :global {
+  padding: 0;
+  margin: 0;
+}
