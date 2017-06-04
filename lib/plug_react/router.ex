@@ -11,7 +11,7 @@ defmodule PlugReact.Router do
 
   get "/" do
     conn = put_resp_content_type(conn, "text/html")
-    send_file(conn, 200, "web/index.html")
+    send_file(conn, 200, "priv/static/index.html")
   end
 
   get "/hello" do

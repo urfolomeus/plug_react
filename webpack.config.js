@@ -1,4 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
@@ -6,7 +7,6 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'priv', 'static', 'js'),
     filename: 'app.js',
-    publicPath: 'priv/static'
   },
   module: {
     rules: [
@@ -43,7 +43,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('../css/app.css')
+    new ExtractTextPlugin('../css/app.css'),
+    new HtmlWebpackPlugin({
+      filename: '../index.html',
+      template: 'web/index.html'
+    })
   ],
   resolve: {
     modules: [ 'node_modules', __dirname + '/web/static/js' ],
