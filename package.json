@@ -6,10 +6,10 @@
   "author": "Alan Gardner <urfolomeus@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn delete && webpack",
+    "build": "yarn delete && webpack -p --env=prod",
     "delete": "rimraf priv/static",
     "eslint": "eslint --ext .jsx --ext .js ./web/static/js",
-    "start": "webpack --watch-stdin --progress --color"
+    "start": "webpack --watch-stdin --progress --color --env=dev"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
