@@ -10,7 +10,7 @@ module.exports = function opts ({ filename, cssFilename }) {
       vendor: ['react', 'react-dom'],
     },
     output: {
-      path: path.join(__dirname, 'priv', 'static', 'js'),
+      path: path.join(__dirname, '..', 'priv', 'static', 'js'),
       filename,
     },
     module: {
@@ -58,7 +58,7 @@ module.exports = function opts ({ filename, cssFilename }) {
       }),
     ],
     resolve: {
-      modules: [ 'node_modules', __dirname + '/web/static/js' ],
+      modules: [ 'node_modules', __dirname + '../web/static/js' ],
       extensions: ['.js', '.jsx']
     }
   }
