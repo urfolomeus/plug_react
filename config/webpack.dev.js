@@ -1,5 +1,4 @@
 var DashboardPlugin = require('webpack-dashboard/plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
@@ -22,18 +21,21 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              query: {
-                modules: true,
-                localIdentName: '[name]___[local]___[hash:base64:5]'
-              }
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            query: {
+              modules: true,
+              localIdentName: '[name]___[local]___[hash:base64:5]'
             }
-          ]
-        })
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
@@ -49,7 +51,6 @@ module.exports = {
   },
   plugins: [
     new DashboardPlugin(),
-    new ExtractTextPlugin('../css/app.css'),
     new HtmlWebpackPlugin({
       filename: '../index.html',
       template: 'web/index.html'
