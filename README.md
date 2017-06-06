@@ -1,19 +1,19 @@
 # PlugReact
 
-**TODO: Add description**
+This is a small example project to show how a React application could be served via Elixir Plug. The idea is that this could then be incorporated into an Elixir umbrella project to more easily keep all project code in the same repo.
 
-## Installation
+## Why Plug and not Phoenix?
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `plug_react` to your list of dependencies in `mix.exs`:
+Well you can fairly easily do either. I originally did this as a Phoenix app and swapped out Brunch for Webpack. However, Plug has a few advantages:
 
-```elixir
-def deps do
-  [{:plug_react, "~> 0.1.0"}]
-end
+1. It's more lightweight. Plug is bare bones although you can add more features as and when you need them. For example, this application uses `Plug.Static` to render static assets.
+2. One of the great things about Phoenix is that you don't have to use it until you have to use it. It should, if you keep your code decoupled, be relatively simple to upgrade to a Phoenix application if you find yourself missing some features.
+
+## How to set up inside of an umbrella app
+
+```
+cd apps
+mix new --sup <app_name>
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/plug_react](https://hexdocs.pm/plug_react).
-
+Now follow the commits in here to add what's needed :)
