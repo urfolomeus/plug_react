@@ -9,7 +9,7 @@
     "build": "yarn delete && webpack -p --env=prod",
     "delete": "rimraf priv/static",
     "eslint": "eslint --ext .jsx --ext .js ./web/static/js",
-    "start": "webpack-dashboard -- webpack --watch-stdin --progress --color --env=dev"
+    "start": "webpack-dashboard -- webpack-dev-server --inline --env=dev"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -30,7 +30,8 @@
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
-    "webpack-dashboard": "^0.4.0"
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "react": "^15.5.4",

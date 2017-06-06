@@ -5,7 +5,11 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './web/static/js/index.js',
+    app: [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/dev-server',
+      path.join(__dirname, '..', 'web', 'static', 'js', 'index.js')
+    ],
     vendor: ['react', 'react-dom'],
   },
   output: {
@@ -52,12 +56,12 @@ module.exports = {
   plugins: [
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
-      filename: '../index.html',
       template: 'web/index.html'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     modules: [ 'node_modules', __dirname + '../web/static/js' ],
